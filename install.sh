@@ -30,12 +30,7 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt install fish python3-pip gh -y
-sudo chsh -s $(which fish)
-sudo usermod -s $(which fish) coder
-mkdir -p ~/.config/fish
-ln -s $script_dir/config.fish ~/.config/fish/config.fish || true
+sudo apt install python3-pip gh -y
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
