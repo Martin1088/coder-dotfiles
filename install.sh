@@ -51,3 +51,8 @@ verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens ser
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source $HOME/.profile
 nvm install --lts
+
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+git clone https://github.com/Matin1088/astrovim_config ~/.config/nvim/lua/user
