@@ -30,7 +30,7 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt install python3-pip gh dbus dbus-glib pkg-config -y
+sudo apt install python3-pip gh -y
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
@@ -55,4 +55,4 @@ nvm install --lts
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-git clone https://github.com/Matin1088/astrovim_config ~/.config/nvim/lua/user
+git clone https://github.com/Martin1088/astrovim_config ~/.config/nvim/lua/user
