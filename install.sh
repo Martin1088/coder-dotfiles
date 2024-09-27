@@ -30,7 +30,7 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt install python3-pip gh -y
+sudo apt install python3-pip gh dbus dbus-glib pkg-config -y
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
