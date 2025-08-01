@@ -1,15 +1,20 @@
 #!/bin/bash -e
+set -euxo pipefail
+export DEBIAN_FRONTEND=noninteractive
 
-DEBIAN_FRONTEND=noninteractive sudo apt update -y
-sudo apt install software-properties-common -y
+# Base packages (minimal, fast)
+apt update -y
+apt install -y --no-install-recommends software-properties-common python3-pip gh stow
+
+# Verbis functions
 source /verbis/functions.sh
-
 verbis_defaults_main
 verbis_symlink_cache_dir git
-sudo ln -ds /mnt/cache/bridgehead /etc || true
+ln -ds /mnt/cache/bridgehead /etc || true
 rm -rf /home/coder/.cargo/registry
 verbis_defaults_rust
 
+#test
 script_dir=$(dirname "$(readlink -f "$0")")
 # Yanked from https://github.com/bstollnitz/dotfiles/blob/main/install.sh
 create_symlinks() {
