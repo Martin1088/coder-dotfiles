@@ -30,12 +30,11 @@ create_symlinks() {
 
 create_symlinks || true
 
-sudo apt-add-repository ppa:fish-shell/release-4
-sudo apt install fish python3-pip gh -y
-sudo chsh -s $(which fish)
-sudo usermod -s $(which fish) coder
-mkdir -p ~/.config/fish
-ln -s $script_dir/config.fish ~/.config/fish/config.fish || true
+sudo apt install zsh python3-pip gh -y
+sudo chsh -s $(which fish)sudo chsh -s $(which zsh)
+sudo usermod -s $(which zsh) coder
+mkdir -p ~/.config/zsh
+ln -s $script_dir/.zshrc ~/.zshrc || true
 
 #curl -L -o out.tgz https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
 #tar -xf out.tgz
@@ -56,3 +55,8 @@ verbis_install_vscode_extensions ms-azuretools.vscode-docker eamodio.gitlens ser
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source $HOME/.profile
 nvm install --lts
+
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+git clone https://github.com/Martin1088/astrovim_config ~/.config/nvim/lua/user
